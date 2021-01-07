@@ -27,9 +27,6 @@ public class RabbitMqConfiguration {
     @Value("${rabbit.exchange.name}")
     private String exchangeName;
 
-    @Autowired
-    private RabbitTemplate rabbitTemplate;
-
     /**
      * @return
      * initialization queue
@@ -57,4 +54,8 @@ public class RabbitMqConfiguration {
     public Binding binding(final Queue queue, DirectExchange directExchange) {
         return BindingBuilder.bind(queue).to(directExchange).with(routingName);
     }
+
+    /**
+     * hangi kuyruk dinleniyor
+     */
 }
